@@ -1,6 +1,8 @@
 import Dropdown from "./dropDown";
 import Link from "next/link";
 import React from "react";
+import { FaCartPlus, FaSearch } from "react-icons/fa";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 export interface MenuItem {
   title: string;
@@ -15,22 +17,30 @@ const menuItems: MenuItem[] = [
   },
   {
     title: "About",
-    route: "/services/about",
+    route: "/about",
   },
   {
     title: "Services",
     children: [
       {
-        title: "Hinkle Horns",
-        route: "/products/hinkle-horns",
+        title: "Agriculture products",
+        route: "/services",
       },
       {
-        title: "Doozers",
-        route: "/products/doozers",
+        title: "Organic products",
+        route: "/services",
       },
       {
-        title: "Zizzer-zazzers",
-        route: "/products/zizzer-zazzers",
+        title: "Fresh vegetables",
+        route: "/services",
+      },
+      {
+        title: "Dairy products",
+        route: "/services",
+      },
+      {
+        title: "Harvest",
+        route: "/services",
       },
     ],
   },
@@ -38,16 +48,28 @@ const menuItems: MenuItem[] = [
     title: "Projects",
     children: [
       {
-        title: "Hinkle Horns",
-        route: "/products/hinkle-horns",
+        title: "Easy harvestsing",
+        route: "/projects",
       },
       {
-        title: "Doozers",
-        route: "/products/doozers",
+        title: "Agricultural farming",
+        route: "/projects",
       },
       {
-        title: "Zizzer-zazzers",
-        route: "/products/zizzer-zazzers",
+        title: "Ecological farming",
+        route: "/projects",
+      },
+      {
+        title: "Organic solutions",
+        route: "/projects",
+      },
+      {
+        title: "Fresh products",
+        route: "/projects",
+      },
+      {
+        title: "Healthy foods",
+        route: "/projects",
       },
     ],
   },
@@ -55,16 +77,16 @@ const menuItems: MenuItem[] = [
     title: "News",
     children: [
       {
-        title: "Hinkle Horns",
-        route: "/products/hinkle-horns",
+        title: "Bringing food production back to cities",
+        route: "/news",
       },
       {
-        title: "Doozers",
-        route: "/products/doozers",
+        title: "The future of farming, smart irrigation solutions",
+        route: "/news",
       },
       {
-        title: "Zizzer-zazzers",
-        route: "/products/zizzer-zazzers",
+        title: "Agronomy and relation to other sciences",
+        route: "/news",
       },
     ],
   },
@@ -72,46 +94,58 @@ const menuItems: MenuItem[] = [
     title: "Shop",
     children: [
       {
-        title: "Hinkle Horns",
-        route: "/products/hinkle-horns",
+        title: "Tomato",
+        route: "/shop",
       },
       {
-        title: "Doozers",
-        route: "/products/doozers",
+        title: "Apples",
+        route: "/shop",
       },
       {
-        title: "Zizzer-zazzers",
-        route: "/products/zizzer-zazzers",
-      },
-      {
-        title: "Contact",
-        route: "/contact",
+        title: "Grapes",
+        route: "/shop",
       },
     ],
   },
+  {
+    title: "Contact",
+    route: "/contact",
+  },
 ];
-const subNav = () => {
+
+const SubNav = () => {
   return (
-    <div className="flex w-full">
-      <header className="flex gap-10 items-center bg-zinc-200 py-4 px-2 w-[80%]">
+    <>
+      <header className="flex gap-10 items-center justify-center bg-zinc-100 py-4 px-2 w-full">
         <Link href="https://designly.biz" target="_blank">
           {/* <Image src="/logo.svg" width={200} height={20} alt="logo" /> */}
         </Link>
         <div className="flex gap-8 items-center text-zinc-600">
           {menuItems.map((item) => {
             return item.hasOwnProperty("children") ? (
-              <Dropdown item={item} />
+              <div className="relative flex">
+                <Dropdown item={item} />
+                <RiArrowDropDownLine
+                  size="22px"
+                  color="#52525b"
+                  className="mt-1"
+                />
+              </div>
             ) : (
-              <Link className="hover:text-blue-500" href={item?.route || ""}>
+              <Link className="hover:text-green-500" href={item?.route || ""}>
                 {item.title}
               </Link>
             );
           })}
         </div>
+        <hr className="w-[1px] border-l-[1px] border-s-[#dad9d9] min-h-[60px]" />
+        <div className="flex gap-7">
+          <FaSearch size="20px" color="#52525b" />
+          <FaCartPlus color="#52525b" size="20px" className="" />
+        </div>
       </header>
-      <div className="bg-zinc-200 w-[20%]">cart and orders</div>
-    </div>
+    </>
   );
 };
 
-export default subNav;
+export default SubNav;

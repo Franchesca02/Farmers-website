@@ -10,12 +10,12 @@ import {
   FaVoicemail,
   FaPhone,
 } from "react-icons/fa";
-// import { FaInbox, FaMapLocation } from "react-icons/fa6";
+
 import { IoMailOpenOutline, IoLocationOutline } from "react-icons/io5";
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white py-3">
+    <nav className="w-full bg-white p-4">
       <div className="flex justify-between">
         <Image
           src={Logo}
@@ -23,7 +23,6 @@ const Navbar = () => {
           className="w-20 h-120 rounded-full"
         ></Image>
 
-        {/* <div className=""> */}
         <div className="flex justify-between mt-5">
           {/* <div className="px-2"> */}
           <a href="#" className="rounded-full w-7 h-7 bg-gray-100 mx-3">
@@ -72,6 +71,8 @@ const Navbar = () => {
         </div>
         {/* </div> */}
       </div>
+
+      {/* mobile version here... */}
     </nav>
   );
 };

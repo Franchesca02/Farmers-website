@@ -1,0 +1,14 @@
+.radio {
+  /* background-color: transparent; */
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  appearance: none;
+  margin-top: 5px;
+  /* cursor: pointer; */
+  background-color: #c5ce38;
+}
+
+/* .radio:checked {
+  background-color: #c5ce38;
+} */

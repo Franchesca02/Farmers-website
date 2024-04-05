@@ -1,11 +1,6 @@
-/* html,
-body {
-  height: 100%;
-} */
-
 hr.vertical {
   /* height: 100% !important; */
   width: 1px !important;
-  border-left: 1px solid rgb(218, 217, 217);
+  border-left: 1px solid #dad9d9;
   min-height: 70px;
 }

@@ -20,16 +20,19 @@ const dropDown = (props: Props) => {
   return (
     <>
       <div className="relative">
-        <button className="hover:text-blue-400" onClick={toggle}>
+        <button
+          className="hover:text-green-500 hover:font-semibold"
+          onClick={toggle}
+        >
           {item.title}
         </button>
         <div
-          className={`absolute top-8 z-30 w-[250px] min-h-[300px] flex flex-col py-4 bg-zinc-400 rounded-md ${transClass}`}
+          className={`absolute top-8 z-30 w-[250px] min-h-[300px] flex flex-col py-4 bg-white rounded-md ${transClass}`}
         >
           {menuItems.map((item) => (
             <Link
               key={item.route}
-              className="hover:bg-zinc-300 hover:text-zinc-500 px-4 py-1"
+              className="hover:bg-green-500 hover:text-white px-4 py-1"
               href={item?.route || ""}
               onClick={toggle}
             >
